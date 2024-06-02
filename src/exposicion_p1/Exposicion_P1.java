@@ -38,6 +38,7 @@ public class Exposicion_P1 {
         
         int opcion = 1;
         Scanner lea = new Scanner(System.in);
+        Scanner leer = new Scanner(System.in);
         while (opcion>0|| opcion<7){
             System.out.println("1. Mostrar todos los libros");
             System.out.println("2. Buscar si el libro existe en la biblioteca");
@@ -55,7 +56,9 @@ public class Exposicion_P1 {
                     break;
                 }
                 case 2:{
-                    Libro libroBuscado = biblioteca.buscarLibroPorTitulo("Cien anos de soledad");
+                    System.out.print("Ingrese el titulo de libro que desea buscar: ");
+                    String libro = leer.nextLine();
+                    Libro libroBuscado = biblioteca.buscarLibroPorTitulo(libro);
                     if (libroBuscado != null) {
                         System.out.println("Libro encontrado: " + libroBuscado.getTitulo());
                     } else {
@@ -65,24 +68,30 @@ public class Exposicion_P1 {
                     break;
                 }
                 case 3:{
-                    System.out.println("Libro publicados en 1981:");
-                    for (Libro libro : biblioteca.obtenerLibrosPorAño("1981")) {
+                    System.out.print("Ingrese la fecha del libro que desea encontrar: ");
+                    String fecha = leer.nextLine();
+                    System.out.println("Libro publicados en "+fecha+ ":");
+                    for (Libro libro : biblioteca.obtenerLibrosPorAño(fecha)) {
                         System.out.println("- " + libro.getTitulo());
                     }
                     System.out.println("-----------------------------------------");
                     break;
                 } 
                 case 4:{
+                    System.out.print("Ingrese la editorial del libro que desea encontrar: ");
+                    String editorial = leer.nextLine();                    
                     System.out.println("Libros de la editorial Sudamericana:");
-                    for (Libro libro : biblioteca.obtenerLibrosPorEditorial("Sudamericana")) {
+                    for (Libro libro : biblioteca.obtenerLibrosPorEditorial(editorial)) {
                         System.out.println("- " + libro.getTitulo());
                     }        
                     System.out.println("-----------------------------------------");                    
                     break;
                 }  
                 case 5:{
-                    System.out.println("Libros de Gabriel Garcia Marquez:");
-                    for (Libro libro : biblioteca.obtenerLibrosPorAutor("Gabriel Garcia Marquez")) {
+                    System.out.print("Ingrese el autor(a) del libro que desea encontrar: ");
+                    String autor = leer.nextLine();                    
+                    System.out.println("Libros de "+autor+":");
+                    for (Libro libro : biblioteca.obtenerLibrosPorAutor(autor)) {
                         System.out.println("- " + libro.getTitulo());
                     }
                     System.out.println("-----------------------------------------");                    

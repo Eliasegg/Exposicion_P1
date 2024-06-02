@@ -8,7 +8,7 @@ package exposicion_p1;
  *
  * @author User
  */
-public class Libros {
+public class Libro {
     private String titulo;
     private String genero;
     private String fecha_pub;
@@ -16,10 +16,9 @@ public class Libros {
     private String editorial;
     private int cantidad_pag;
 
-    public Libros() {
-    }
+    public Libro() {}
 
-    public Libros(String titulo, String genero, String fecha_pub, String autor, String editorial, int cantidad_pag) {
+    public Libro(String titulo, String genero, String fecha_pub, String autor, String editorial, int cantidad_pag) {
         this.titulo = titulo;
         this.genero = genero;
         this.fecha_pub = fecha_pub;

@@ -68,7 +68,7 @@ public class Exposicion_P1 {
                     break;
                 }
                 case 3:{
-                    System.out.print("Ingrese la fecha del libro que desea encontrar: ");
+                    System.out.print("Ingrese el año del libro que desea encontrar: ");
                     String fecha = leer.nextLine();
                     System.out.println("Libro publicados en "+fecha+ ":");
                     for (Libro libro : biblioteca.obtenerLibrosPorAño(fecha)) {
@@ -90,7 +90,7 @@ public class Exposicion_P1 {
                 case 5:{
                     System.out.print("Ingrese el autor(a) del libro que desea encontrar: ");
                     String autor = leer.nextLine();                    
-                    System.out.println("Libros de "+autor+":");
+                    System.out.println("Libros de "+autor+": ");
                     for (Libro libro : biblioteca.obtenerLibrosPorAutor(autor)) {
                         System.out.println("- " + libro.getTitulo());
                     }
